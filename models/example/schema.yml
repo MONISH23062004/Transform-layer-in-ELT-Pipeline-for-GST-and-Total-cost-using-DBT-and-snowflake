@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    database: dbt_demo
+    schema: analytics
+    tables:
+      - name: orders
+
+models:
+  - name: orders_cleaned
+    description: "Cleaned version of raw_orders"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
