@@ -1,4 +1,19 @@
+# Ignore Snowflake credentials and DBT profiles
+profiles.yml
+.env
 
+# DBT build artifacts
 target/
+dbt_modules/
 dbt_packages/
-logs/
+
+# DBT Cloud metadata (if used locally)
+*.dbt
+
+# VS Code and system files (optional but good practice)
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Python virtual environment (if used)
+venv/
